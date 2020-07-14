@@ -1,0 +1,67 @@
+-------------------------------------------------------
+
+1- Users Route
+
+-------------------------------------------------------
+
+a) /users/signin
+METHOD: POST
+BODY: username, password
+RESPONSE: msg, status, token
+
+b) /users/signup
+METHOD: POST
+BODY: username, password, email
+RESPONSE: msg, status, token
+
+-------------------------------------------------------
+
+2- Posts Route
+
+-------------------------------------------------------
+
+a) /posts
+METHOD: GET
+RESPONSE: status, data
+
+b) /posts/upload
+METHOD: POST
+AUTHORIZATION: Bearer {token}
+BODY: avatar(file), title, description
+RESPONSE: status, msg, data
+
+c) /posts/edit/:id
+METHOD: PUT
+AUTHORIZATION: Bearer {token}
+BODY: title, description
+RESPONSE: msg, status
+
+d) /posts/delete/:id
+METHOD: DELETE
+AUTHORIZATION: Bearer {token}
+RESPONSE: msg, status
+
+-------------------------------------------------------
+
+3- Comments Route
+
+-------------------------------------------------------
+
+a) /comments/add
+METHOD: POST
+AUTHORIZATION: Bearer {token}
+BODY: comment, post_id
+RESPONSE: msg; status, data
+
+b) /comments/edit/:id
+METHOD: PUT
+AUTHORIZATION: Bearer {token}
+BODY: comment
+RESPONSE: msg; status
+
+c) /comments/delete/:id
+METHOD: DELETE
+AUTHORIZATION: Bearer {token}
+RESPONSE: msg, status
+
+-------------------------------------------------------
